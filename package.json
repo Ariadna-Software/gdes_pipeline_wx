@@ -1,0 +1,47 @@
+{
+  "name": "gdes_pipeline_wx",
+  "version": "0.0.1",
+  "description": "GDES-PIPELINE-WX",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ariadna-Software/gdes_pipeline_wx.git"
+  },
+  "keywords": [
+    "node",
+    "gdes_pipeline"
+  ],
+  "author": "'Rafael Garcia <'rafa@myariadna.com'>",
+  "license": "CC-BY-NC-4.0",
+  "bugs": {
+    "url": "https://github.com/Ariadna-Software/gdes_pipeline_wx/issues"
+  },
+  "homepage": "https://github.com/Ariadna-Software/gdes_pipelinea_wx#readme",
+  "dependencies": {
+    "applicationinsights": "^1.0.3",
+    "async": "^2.0.0",
+    "body-parser": "^1.18.3",
+    "connect": "^3.6.6",
+    "cors": "^2.7.1",
+    "edge": "^4.0.0",
+    "express": "^4.16.3",
+    "express-session": "^1.15.6",
+    "formidable": "^1.2.1",
+    "moment": "^2.22.2",
+    "multer": "^1.1.0",
+    "nodemailer": "2.4.2",
+    "numeral": "^1.5.3",
+    "passport": "^0.4.0",
+    "passport-azure-ad": "^2.0.2",
+    "serve-index": "^1.9.1",
+    "sprintf-js": "^1.0.3",
+    "xlsx": "^0.12.12"
+  },
+  "devDependencies": {
+    "mysql": "^2.16.0"
+  }
+}
