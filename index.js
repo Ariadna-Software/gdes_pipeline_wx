@@ -155,7 +155,7 @@ app.post('/auth/openid/return',
         var url = "/login2.html?error=NOUSER";
         if (process.env.WEBIX_TEST) url = "http://localhost:8083/#!/loginauto?email=" + user.email;
         if (user) {
-            url = "/loginauto?email=" + user.email;
+            url = "/#!/loginauto?email=" + user.email;
             if (process.env.WEBIX_TEST) url = "http://localhost:8083/#!/loginauto?email=" + user.email;
         }
         console.log('We received a return from AzureAD.');
