@@ -155,7 +155,7 @@ app.post('/auth/openid/return',
         var url = "/login2.html?error=NOUSER";
         if (process.env.WEBIX_TEST) url = "http://localhost:8083/#!/loginauto?email=" + user.email;
         if (user) {
-            url = "/login.html?email=" + user.email;
+            url = "/loginauto?email=" + user.email;
             if (process.env.WEBIX_TEST) url = "http://localhost:8083/#!/loginauto?email=" + user.email;
         }
         console.log('We received a return from AzureAD.');
@@ -231,7 +231,7 @@ app.listen(config.apiPort);
 
 // -- console message
 console.log("-------------------------------------------");
-console.log(" GDES PIPELINE ", moment(new Date()).format('DD/MM/YYYYY HH:mm:ss'));
+console.log(" GDES PIPELINE WX ", moment(new Date()).format('DD/MM/YYYYY HH:mm:ss'));
 console.log("-------------------------------------------");
 console.log(' VERSION: ' + pack.version);
 console.log(' PORT: ' + config.apiPort);
