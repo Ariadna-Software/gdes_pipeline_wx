@@ -148,6 +148,7 @@ app.get('/auth/openid/return',
 //   request. If authentication fails, the user is redirected back to the
 //   sign-in page. Otherwise, the primary route function is called,
 //   which, in this example, redirects the user to the home page.
+
 app.post('/auth/openid/return',
     passport.authenticate('azuread-openidconnect', { failureRedirect: '/login' }),
     function (req, res) {
