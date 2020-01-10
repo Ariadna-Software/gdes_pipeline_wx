@@ -222,6 +222,7 @@ app.use('/upload', require('./lib/uploads/upload'));
 app.use('/importacion', require('./lib/importacion/importacion.controller'));
 app.use('/api/parametros', require('./lib/parametros/parametros.controller'));
 app.use('/api/servicios-areas', require('./lib/servicios-areas/servicios-areas.controller'));
+app.use('/api/grupos-usuarios-lineas', require('./lib/grupos-usuarios-lineas/grupos-usuarios-lineas.controller'));
 
 
 // -- start server
