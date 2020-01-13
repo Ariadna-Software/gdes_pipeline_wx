@@ -1,9 +1,10 @@
 {
   "name": "gdes_pipeline_wx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "GDES-PIPELINE-WX",
   "main": "index.js",
   "scripts": {
+    "debug": "nodemon index.js",
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
