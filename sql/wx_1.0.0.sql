@@ -19,3 +19,5 @@ ALTER TABLE `ofertas`
 
 INSERT INTO ubicaciones (nombre)
 SELECT DISTINCT ubicacion FROM ofertas WHERE NOT ubicacion IS NULL;
+
+UPDATE ofertas, ubicaciones SET ofertas.ubicacionId = ubicaciones.ubicacionId WHERE ubicaciones.nombre = ofertas.ubicacion;
