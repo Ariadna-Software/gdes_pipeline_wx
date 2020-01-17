@@ -203,7 +203,6 @@ app.use('/api/grupos-actividades', require('./lib/grupos-actividades/grupos-acti
 app.use('/api/tipos-actividades', require('./lib/tipos-actividades/tipos-actividades.controller'));
 app.use('/api/tipos-soporte', require('./lib/tipos-soporte/tipos-soporte.controller'));
 app.use('/api/ofertas', require('./lib/ofertas/ofertas.controller'));
-app.use('/api/ofertas-hitos', require('./lib/ofertas-hitos/ofertas-hitos.controller'));
 app.use('/api/fases-oferta', require('./lib/fases-oferta/fases-oferta.controller'));
 app.use('/api/tipos-oferta', require('./lib/tipos-oferta/tipos-oferta.controller'));
 app.use('/api/tipos-oportunidad', require('./lib/tipos-oportunidad/tipos-oportunidad.controller'));
@@ -224,6 +223,7 @@ app.use('/importacion', require('./lib/importacion/importacion.controller'));
 app.use('/api/parametros', require('./lib/parametros/parametros.controller'));
 app.use('/api/servicios-areas', require('./lib/servicios-areas/servicios-areas.controller'));
 app.use('/api/grupos-usuarios-lineas', require('./lib/grupos-usuarios-lineas/grupos-usuarios-lineas.controller'));
+app.use('/api/ofertas-hitos', require('./lib/ofertas-hitos/ofertas-hitos.controller'));
 
 
 // -- start server
