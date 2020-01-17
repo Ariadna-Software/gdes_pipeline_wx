@@ -203,6 +203,7 @@ app.use('/api/grupos-actividades', require('./lib/grupos-actividades/grupos-acti
 app.use('/api/tipos-actividades', require('./lib/tipos-actividades/tipos-actividades.controller'));
 app.use('/api/tipos-soporte', require('./lib/tipos-soporte/tipos-soporte.controller'));
 app.use('/api/ofertas', require('./lib/ofertas/ofertas.controller'));
+app.use('/api/ofertas-hitos', require('./lib/ofertas-hitos/ofertas-hitos.controller'));
 app.use('/api/fases-oferta', require('./lib/fases-oferta/fases-oferta.controller'));
 app.use('/api/tipos-oferta', require('./lib/tipos-oferta/tipos-oferta.controller'));
 app.use('/api/tipos-oportunidad', require('./lib/tipos-oportunidad/tipos-oportunidad.controller'));
