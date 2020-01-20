@@ -10,3 +10,7 @@ CREATE TABLE `ofertas_hitos` (
   CONSTRAINT `ref_hito_oferta` FOREIGN KEY (`ofertaId`) REFERENCES `ofertas`(`ofertaId`),
   CONSTRAINT `ref_hito_divisa` FOREIGN KEY (`divisaId`) REFERENCES `divisas`(`divisaId`)
 );
+
+
+ALTER TABLE `ofertas_hitos`   
+	CHANGE `ofertaHitoid` `ofertaHitoId` INT(11) NOT NULL AUTO_INCREMENT COMMENT 'Identificador único del hito de oferta';
