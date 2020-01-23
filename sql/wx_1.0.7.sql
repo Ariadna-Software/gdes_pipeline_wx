@@ -7,3 +7,6 @@ ALTER TABLE `ofertas`
 	ADD COLUMN `finanzas` BOOL NULL AFTER `laboral`,
 	ADD COLUMN `codigoOp` VARCHAR(255) NULL AFTER `finanzas`,
 	ADD COLUMN `fechaComite` DATE NULL AFTER `codigoOp`;
+
+ALTER TABLE `ofertas`   
+	ADD COLUMN `importeMaxLicitacionDivisa` DECIMAL(12,2) NULL AFTER `fechaComite`;
