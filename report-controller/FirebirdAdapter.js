@@ -1,5 +1,5 @@
 exports.process = function (command, onResult) {
-    
+
     var end = function (result) {
         try {
             if (db) db.detach();
@@ -8,11 +8,11 @@ exports.process = function (command, onResult) {
         catch (e) {
         }
     }
-    
+
     var onError = function (message) {
         end({ success: false, notice: message });
     }
-    
+
     try {
         var connect = function () {
             Firebird.attach(options, function (error, db1) {
@@ -21,20 +21,20 @@ exports.process = function (command, onResult) {
                 else onConnect();
             });
         }
-        
+
         var query = function (queryString) {
             db.query(queryString, undefined, function (error, recordset) {
                 if (error) onError(error.message);
                 else onQuery(recordset);
-				db.detach();
+                db.detach();
             });
         }
-        
+
         var onConnect = function () {
             if (command.queryString) query(command.queryString);
             else end({ success: true });
         }
-        
+
         var onQuery = function (recordset) {
             var columns = [];
             var rows = [];
@@ -46,7 +46,8 @@ exports.process = function (command, onResult) {
                     if (!isColumnsFill) columns.push(columnName);
                     var columnIndex = columns.indexOf(columnName);
                     types[columnIndex] = typeof recordset[recordIndex][columnName];
-                    if (recordset[recordIndex][columnName] instanceof Uint8Array) {
+                    if (recordset[recordIndex][columnName] instanceof Uint8Array ||
+                        recordset[recordIndex][columnName] instanceof Buffer) {
                         recordset[recordIndex][columnName] = recordset[recordIndex][columnName].toString();
                         types[columnIndex] = "string";
                     }
@@ -55,17 +56,17 @@ exports.process = function (command, onResult) {
                         types[columnIndex] = "datetime";
                     }
 
-                    row.push(recordset[recordIndex][columnName]);
+                    row[columnIndex] = recordset[recordIndex][columnName];
                 }
                 isColumnsFill = true;
                 rows.push(row);
             }
-            
+
             end({ success: true, columns: columns, rows: rows, types: types });
         }
-        
+
         var getConnectionStringInfo = function (connectionString) {
-            var info = { host: "localhost", port: "3050"};
+            var info = { host: "localhost", port: "3050" };
             var isCorrect = false;
             for (var propertyIndex in connectionString.split(";")) {
                 var property = connectionString.split(";")[propertyIndex];
@@ -74,13 +75,13 @@ exports.process = function (command, onResult) {
                     if (match && match.length >= 2) {
                         match[0] = match[0].trim().toLowerCase();
                         match[1] = match[1].trim();
-                        
+
                         switch (match[0]) {
                             case "server":
                             case "host":
                             case "location":
-							case "datasource":
-							case "data source":
+                            case "datasource":
+                            case "data source":
                                 info["host"] = match[1];
                                 break;
 
@@ -90,7 +91,7 @@ exports.process = function (command, onResult) {
 
                             case "database":
                                 info["database"] = match[1];
-								isCorrect = true;
+                                isCorrect = true;
                                 break;
 
                             case "uid":
@@ -112,27 +113,27 @@ exports.process = function (command, onResult) {
                 }
             }
             if (!isCorrect) {
-				onError("Connection String parse error");
-				return null;
-			}
+                onError("Connection String parse error");
+                return null;
+            }
             return info;
         };
-        
+
         var Firebird = require('node-firebird');
         command.connectionStringInfo = getConnectionStringInfo(command.connectionString);
-        if (command.connectionStringInfo){
-			var options = {
-				host: command.connectionStringInfo.host,
-				port: command.connectionStringInfo.port,
-				database: command.connectionStringInfo.database,
-				user: command.connectionStringInfo.userId,
-				password: command.connectionStringInfo.password,
-				charset: command.connectionStringInfo.charset,
-			};
+        if (command.connectionStringInfo) {
+            var options = {
+                host: command.connectionStringInfo.host,
+                port: command.connectionStringInfo.port,
+                database: command.connectionStringInfo.database,
+                user: command.connectionStringInfo.userId,
+                password: command.connectionStringInfo.password,
+                charset: command.connectionStringInfo.charset,
+            };
 
-			connect();
-			var db;
-		}
+            connect();
+            var db;
+        }
     }
     catch (e) {
         onError(e.stack);

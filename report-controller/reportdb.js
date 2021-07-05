@@ -18,11 +18,14 @@ router.post('/', function (req, res) {
     response.setHeader("Cache-Control", "no-cache");
     var data = "";
     req.on('data', function (buffer) {
+        console.log("Buf:", buffer);
+        console.log("Buf2:", buffer.toString());
         data += buffer;
     });
 
     req.on('end', function () {
         console.log("DATA:", data);
+        // console.log("dt2", new Buffer(data, 'base64').toString('ascii'));
         command = JSON.parse(data.toString());
 
         if (command.database == "MySQL") MySQLAdapter.process(command, onProcess);
