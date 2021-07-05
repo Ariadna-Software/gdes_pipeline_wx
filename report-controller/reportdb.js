@@ -18,8 +18,6 @@ router.post('/', function (req, res) {
     response.setHeader("Cache-Control", "no-cache");
     var data = "";
     req.on('data', function (buffer) {
-        console.log("Buf:", buffer);
-        console.log("Buf2:", buffer.toString());
         data += buffer;
     });
 
