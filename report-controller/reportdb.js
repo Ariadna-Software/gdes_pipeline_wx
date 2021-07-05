@@ -22,6 +22,7 @@ router.post('/', function (req, res) {
     });
 
     req.on('end', function () {
+        console.log("DATA:", data);
         command = JSON.parse(data.toString());
 
         if (command.database == "MySQL") MySQLAdapter.process(command, onProcess);
