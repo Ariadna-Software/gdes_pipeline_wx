@@ -22,7 +22,7 @@ router.post('/', function (req, res) {
     });
 
     req.on('end', function () {
-        console.log("DATA:", data);
+        // console.log("DATA:", data);
         // console.log("dt2", new Buffer(data, 'base64').toString('ascii'));
         command = JSON.parse(data.toString());
 
