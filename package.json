@@ -23,7 +23,7 @@
   "homepage": "https://github.com/Ariadna-Software/gdes_pipelinea_wx#readme",
   "dependencies": {
     "applicationinsights": "^1.0.3",
-    "async": "^2.0.0",
+    "async": "^3.2.2",
     "body-parser": "^1.18.3",
     "connect": "^3.6.6",
     "cors": "^2.7.1",
