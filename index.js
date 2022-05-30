@@ -224,7 +224,7 @@ app.use('/api/parametros', require('./lib/parametros/parametros.controller'));
 app.use('/api/servicios-areas', require('./lib/servicios-areas/servicios-areas.controller'));
 app.use('/api/grupos-usuarios-lineas', require('./lib/grupos-usuarios-lineas/grupos-usuarios-lineas.controller'));
 app.use('/api/ofertas-hitos', require('./lib/ofertas-hitos/ofertas-hitos.controller'));
-
+app.use('/api/proyectos_central', require('./lib/proyectos_central/proyectos_central.controller'));
 
 // -- start server
 app.listen(config.apiPort);
