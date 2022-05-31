@@ -39,7 +39,7 @@
     "passport-azure-ad": "^2.0.2",
     "serve-index": "^1.9.1",
     "sprintf-js": "^1.0.3",
-    "xlsx": "^0.12.12"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "mysql": "^2.16.0"
