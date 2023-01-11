@@ -36,7 +36,7 @@
     "nodemailer": "2.4.2",
     "numeral": "^1.5.3",
     "passport": "^0.4.0",
-    "passport-azure-ad": "^2.0.2",
+    "passport-azure-ad": "^4.3.4",
     "serve-index": "^1.9.1",
     "sprintf-js": "^1.0.3",
     "xlsx": "^0.12.12"
