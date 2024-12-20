@@ -1,6 +1,6 @@
 {
   "name": "gdes_pipeline_wx",
-  "version": "1.9.0",
+  "version": "1.9.1",
   "description": "GDES-PIPELINE-WX",
   "main": "index.js",
   "scripts": {
