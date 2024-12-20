@@ -33,6 +33,7 @@
     "formidable": "^1.2.1",
     "moment": "^2.22.2",
     "multer": "^1.1.0",
+    "node-gyp": "^5.1.0",
     "nodemailer": "2.4.2",
     "numeral": "^1.5.3",
     "passport": "^0.4.0",
