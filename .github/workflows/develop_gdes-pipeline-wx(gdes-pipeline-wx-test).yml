@@ -30,6 +30,6 @@ jobs:
       uses: azure/webapps-deploy@v1
       with:
         app-name: 'gdes-pipeline-wx'
-        slot-name: 'gdes-pipeline-wx-test'
+        slot-name: 'test'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_b41325b32ae6494284c6351c7b1d6fb3 }}
         package: .
