@@ -28,5 +28,5 @@ jobs:
       with:
         app-name: 'gdes-pipeline-wx'
         # NOTA: no pongas slot-name si es producción directa
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_Production }}
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_PRODUCTION }}
         package: .
