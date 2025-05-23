@@ -28,3 +28,4 @@ obj/
 _ReSharper*/
 [Tt]est[Rr]esult*
 node_modules
+develop_gdes-pipeline-wx(gdes-pipeline-wx-test).yml
